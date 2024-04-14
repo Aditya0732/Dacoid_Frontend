@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/actions/authSlice';
 import { useNavigate } from 'react-router-dom';
+import { setLoader } from '../redux/actions/infoSlice';
 
 const Goals = () => {
     const [error, setError] = useState(false);
@@ -29,15 +30,17 @@ const Goals = () => {
             setError(false);
 
             try {
+                dispatch(setLoader(true));
                 const response = await axios.post('https://dacoid-backend.onrender.com/api/user/update',
                     { selectedGoals: selectedOptions },
                     {
                         headers: {
                             'Authorization': `Bearer ${accessToken}`
                         },
-                        withCredentials: true, 
+                        withCredentials: true,
                     }
                 );
+                dispatch(setLoader(false));
                 dispatch(setUser(response.data.user));
                 navigate('/home');
             } catch (error) {

@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { setAccessToken, setUser } from '../redux/actions/authSlice';
+import { setLoader } from '../redux/actions/infoSlice';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -42,11 +43,12 @@ const SignIn = () => {
 
         if (!errorsCopy.email && !errorsCopy.password) {
             try {
+                dispatch(setLoader(true));
                 const response = await axios.post('https://dacoid-backend.onrender.com/api/login', {
                     email,
                     password,
                 });
-
+                dispatch(setLoader(false));
                 dispatch(setAccessToken(response.data.accessToken))
                 dispatch(setUser(response.data.user));
                 navigate('/goals');
@@ -55,6 +57,7 @@ const SignIn = () => {
                     // Handle 401 status code (Unauthorized)
                     console.error('Invalid email or password');
                     setErrors({ invalid: true });
+                    dispatch(setLoader(false));
                 } else {
                     console.error('Login error:', error.response.data);
                 }

@@ -6,6 +6,7 @@ import { BiSolidError } from "react-icons/bi";
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setAccessToken, setUser } from '../redux/actions/authSlice';
+import { setLoader } from '../redux/actions/infoSlice';
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('');
@@ -51,6 +52,7 @@ const SignUp = () => {
        
         if (!errorsCopy.firstName && !errorsCopy.lastName && !errorsCopy.email && !errorsCopy.password) {
             try {
+                dispatch(setLoader(true));
                 const response = await axios.post('https://dacoid-backend.onrender.com/api/signup', {
                     firstName,
                     lastName,
@@ -58,7 +60,7 @@ const SignUp = () => {
                     password,
                     terms:true,
                 });
-
+                dispatch(setLoader(false));
                 dispatch(setAccessToken(response.data.accessToken))
                 dispatch(setUser(response.data.user));
                 navigate('/goals');
@@ -68,6 +70,7 @@ const SignUp = () => {
                 } else {
                     console.error('Signup error:', error.response.data);
                 }
+                dispatch(setLoader(false));
             }
         }
     };
