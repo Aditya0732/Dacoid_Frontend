@@ -3,6 +3,7 @@ import { BiError } from 'react-icons/bi'
 import { FaChevronLeft } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import Bottombar from '../components/Bottombar'
+import Chart from '../components/Chart'
 
 const Tracker = () => {
     return (
@@ -17,10 +18,8 @@ const Tracker = () => {
                     <h1 className='text-xl font-semibold font-[Roboto] mt-2'>Workout Tracker</h1>
                 </div>
             </div>
-            <div className='mt-14'>
-                <img src='/chart.png' alt='chart' className='w-full' />
-            </div>
-            <div className='flex w-[95%] border rounded-xl mt-6 bg-gradient-to-r to-[#F1F1F1] from-[#DEE5FF] '>
+            <Chart/>
+            <div className='flex w-[95%] border rounded-xl mt-10 bg-gradient-to-r to-[#F1F1F1] from-[#DEE5FF] '>
                 <div className='flex items-center gap-3 p-2 w-[80%] '>
                     <span><BiError color='809AFF' size={32} /></span>
                     <h1 className='text-xs font-semibold'>You've burned fewer calories than yesterday. Time to get moving!</h1>
@@ -71,7 +70,7 @@ const Tracker = () => {
                     <img src='/w3.png' alt='w3' className='w-28 h-28 rounded-full' />
                 </div>
             </div>
-            <Bottombar/>
+            <Bottombar />
         </div>
     )
 }
