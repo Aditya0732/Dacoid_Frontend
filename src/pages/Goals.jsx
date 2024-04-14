@@ -29,7 +29,7 @@ const Goals = () => {
             setError(false);
 
             try {
-                const response = await axios.post('http://localhost:4001/api/user/update',
+                const response = await axios.post('https://dacoid-backend.onrender.com/api/user/update',
                     { selectedGoals: selectedOptions },
                     {
                         headers: {

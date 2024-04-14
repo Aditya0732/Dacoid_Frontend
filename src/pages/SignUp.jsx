@@ -51,7 +51,7 @@ const SignUp = () => {
        
         if (!errorsCopy.firstName && !errorsCopy.lastName && !errorsCopy.email && !errorsCopy.password) {
             try {
-                const response = await axios.post('http://localhost:4001/api/signup', {
+                const response = await axios.post('https://dacoid-backend.onrender.com/api/signup', {
                     firstName,
                     lastName,
                     email,
