@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+**Project Overview**
+This project is a full-stack web application built using HTML, Javascript,React, Tailwind CSS, Node.js, MongoDB, Redux, JWT, Secure Cookies. The application is designed to showcase my skills as a Full-stack Developer, and demonstrates my ability to build a functional and visually appealing web application from scratch.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Note** : When we will be making first api request to backend for signin or signup , it can take upto 1 minute for server to start again. I have applied loaders which will be shown while request is processing.
 
-## Available Scripts
+**Frontend**
+The frontend of the application is built using React and Tailwind CSS. The application is developed for mobile devices. The following features are implemented in the frontend:
+-Completely designed using Tailwind CSS
+-Added a goals section where user can select between service of tracker and scheduler.
+-Applied proper validations for inputs of signup and signin form.
+-User registration and login
+-User authentication using JWT and secure cookies
+-User profile management
+-Redux is used for state management.
 
-In the project directory, you can run:
+**Backend**
+Link : https://github.com/Aditya0732/Dacoid_Backend
+The backend of the application is built using Node.js and MongoDB. The following features are implemented in the backend:
+-User registration and login
+-User authentication using JWT and secure cookies
+-User profile management
 
-### `npm start`
+**Deployment**
+The application is deployed on Render. The following links can be used to access the application:
+https://dacoid-frontend.onrender.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Dependencies**
+The following dependencies are used in this project:
+HTML
+Javascript
+React.js
+Tailwind CSS
+Node.js
+MongoDB
+Redux
+JWT
