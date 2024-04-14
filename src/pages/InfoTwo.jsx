@@ -18,15 +18,13 @@ const InfoTwo = () => {
                 <h1 className='text-[#787878] text-[16px]'>let's keep burning to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever</h1>
             </div>
             <div className='flex justify-end mt-10'>
-                {/* <div className='border-2 p-1 rounded-full border-[#89A1FF] border-b-0 border-l-0 border-t-0 border-r-0'> */}
-                <Link to="/signup">
-                    <span class='custom-border cursor-pointer'>
+                <div className='border-2 p-1 rounded-full border-[#89A1FF] border-l-0 border-t-0'>
+                    <Link to="/signup">
                         <span class='flex items-center p-[22px] bg-gradient-to-r from-[#DEE5FF] to-[#809AFF] rounded-full'>
                             <FaChevronRight color='white' size={16} />
                         </span>
-                    </span>
-                </Link>
-                {/* </div> */}
+                    </Link>
+                </div>
             </div>
         </div>
     )
