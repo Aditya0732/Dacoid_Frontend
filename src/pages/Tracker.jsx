@@ -18,7 +18,9 @@ const Tracker = () => {
                     <h1 className='text-xl font-semibold font-[Roboto] mt-2'>Workout Tracker</h1>
                 </div>
             </div>
-            <Chart/>
+            <Link to="/scheduler">
+                <Chart />
+            </Link>
             <div className='flex w-[95%] border rounded-xl mt-10 bg-gradient-to-r to-[#F1F1F1] from-[#DEE5FF] '>
                 <div className='flex items-center gap-3 p-2 w-[80%] '>
                     <span><BiError color='809AFF' size={32} /></span>
