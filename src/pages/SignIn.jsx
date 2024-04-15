@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebookF } from 'react-icons/fa6';
+import { FaFacebookF, FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 import { FcGoogle } from "react-icons/fc";
 import { BiSolidError } from "react-icons/bi";
 import axios from 'axios';
@@ -11,6 +11,7 @@ import { setLoader } from '../redux/actions/infoSlice';
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [errors, setErrors] = useState({
         email: false,
         password: false,
@@ -18,6 +19,10 @@ const SignIn = () => {
     });
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -82,17 +87,32 @@ const SignIn = () => {
                     />
                     {errors.email && <p className="text-red-300 font-semibold text-xs mt-1 flex gap-1"><span className='text-red-400'><BiSolidError size={16} /></span>Email is required</p>}
                 </div>
-                <div>
+                <div className='relative'>
                     <input
-                        type='password'
+                        type={showPassword ? 'text' : 'password'} // Show plain text if showPassword is true
                         name='password'
                         value={password}
                         onChange={handleInputChange}
                         placeholder='Password'
                         className={`p-4 rounded-lg w-full text-xs bg-[#F1F1F1] outline-none ${errors.password && 'bg-red-200'}`}
-
                     />
-                    {errors.password && <p className="text-red-300 font-semibold text-xs mt-1 flex gap-1"><span className='text-red-400'><BiSolidError size={16} /></span>Password is required</p>}
+                    {showPassword ? (
+                        <span className='text-[#7F7F7F] absolute right-2 top-4 cursor-pointer' onClick={togglePasswordVisibility}>
+                            <FaRegEyeSlash />
+                        </span>
+                    ) : (
+                        <span className='text-[#7F7F7F] absolute right-2 top-4 cursor-pointer' onClick={togglePasswordVisibility}>
+                            <FaRegEye />
+                        </span>
+                    )}
+                    {errors.password && (
+                        <p className="text-red-300 font-semibold text-xs mt-1 flex gap-1">
+                            <span className='text-red-400'>
+                                <BiSolidError size={16} />
+                            </span>
+                            Password is required
+                        </p>
+                    )}
                 </div>
                 <div className='flex gap-2'>
 
